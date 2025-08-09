@@ -34,35 +34,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand & Description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">E</span>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">EduNation 2025</h3>
-                <p className="text-white/80 text-sm">Transformasi Pendidikan Indonesia</p>
-              </div>
+            <div className="mb-6">
+              <p className="text-white/80 text-sm">Transformasi Pendidikan Indonesia</p>
             </div>
             
-            <p className="text-white/90 leading-relaxed mb-6 max-w-md">
-              Seminar & Workshop "Sentuh Hati, Bangun Generasi" - Transformasi Guru Menuju Sekolah Sehat Mental. 
-              Bergabunglah dengan gerakan pendidikan yang lebih baik untuk Indonesia.
-            </p>
-
             {/* Event Info */}
-            <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm mb-6">
-              <h4 className="font-semibold mb-2 flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                Info Acara
-              </h4>
-              <div className="text-sm text-white/90 space-y-1">
-                <p>📅 11 Agustus 2025 (Tentatif)</p>
-                <p>⏰ 08.00 - 15.00 WIB</p>
-                <p>📍 Andalucia Hall, Menara 165</p>
-                <p>💰 GRATIS</p>
-              </div>
+            <div>
             </div>
 
             {/* Hashtags */}

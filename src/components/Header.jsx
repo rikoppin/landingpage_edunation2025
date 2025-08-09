@@ -27,14 +27,12 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">E</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-primary-700">EduNation</h1>
-              <p className="text-sm text-accent-600">2025</p>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="/edunation-logo.png" 
+              alt="EDUNATION FEST 2025" 
+              className="h-12 sm:h-14 lg:h-16 w-auto object-contain max-w-[250px] sm:max-w-[300px] lg:max-w-[350px]"
+            />
           </div>
 
           {/* Desktop Navigation */}

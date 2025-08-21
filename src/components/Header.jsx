@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,10 +16,27 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsMenuOpen(false);
+  };
+
+  const navigateToPage = (path) => {
+    navigate(path);
     setIsMenuOpen(false);
   };
 
@@ -42,6 +62,12 @@ const Header = () => {
               className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
             >
               Beranda
+            </button>
+            <button 
+              onClick={() => navigateToPage('/company-profile')}
+              className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
+            >
+              Company Profile
             </button>
             <button 
               onClick={() => scrollToSection('speakers')}
@@ -101,6 +127,12 @@ const Header = () => {
               className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
             >
               Beranda
+            </button>
+            <button 
+              onClick={() => navigateToPage('/company-profile')}
+              className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
+            >
+              Company Profile
             </button>
             <button 
               onClick={() => scrollToSection('speakers')}

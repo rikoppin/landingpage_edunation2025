@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Speakers from './components/Speakers';
@@ -7,8 +8,10 @@ import EventDetails from './components/EventDetails';
 import Countdown from './components/Countdown';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CompanyProfile from './components/CompanyProfile';
 
-function App() {
+// Home Page Component
+const HomePage = () => {
   useEffect(() => {
     let lastScrollY = window.scrollY;
     let animationTimeouts = [];
@@ -75,16 +78,29 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Header />
+    <>
       <Hero />
       <Countdown />
       <Speakers />
       <Workshop />
       <EventDetails />
       <Contact />
-      <Footer />
-    </div>
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/company-profile" element={<CompanyProfile />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

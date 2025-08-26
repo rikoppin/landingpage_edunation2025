@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Speakers from './components/Speakers';
-import Workshop from './components/Workshop';
+import Benefit from './components/Benefit';
 import EventDetails from './components/EventDetails';
 import Countdown from './components/Countdown';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CompanyProfile from './components/CompanyProfile';
 
 // Home Page Component
 const HomePage = () => {
@@ -82,7 +81,7 @@ const HomePage = () => {
       <Hero />
       <Countdown />
       <Speakers />
-      <Workshop />
+      <Benefit />
       <EventDetails />
       <Contact />
     </>
@@ -96,7 +95,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/company-profile" element={<CompanyProfile />} />
         </Routes>
         <Footer />
       </div>

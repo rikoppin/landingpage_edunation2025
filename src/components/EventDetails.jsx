@@ -1,12 +1,15 @@
 import React from 'react';
+import eventData from '../data.json';
 
 const EventDetails = () => {
+  const { eventSchedule } = eventData;
+  
   const eventInfo = [
     {
       icon: "📅",
       title: "Tanggal",
-      value: "11 Agustus 2025",
-      subtitle: "(Tentatif)",
+      value: "7-9 September 2025",
+      subtitle: "3 Hari Berturut-turut",
       color: "from-primary-500 to-primary-600"
     },
     {
@@ -19,8 +22,8 @@ const EventDetails = () => {
     {
       icon: "📍",
       title: "Lokasi",
-      value: "Andalucia Hall, Menara 165",
-      subtitle: "Lokasi Strategis",
+      value: "to be announced",
+      subtitle: "Akan Diumumkan Segera",
       color: "from-primary-600 to-secondary-500"
     },
     {

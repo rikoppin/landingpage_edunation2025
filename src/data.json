@@ -1,0 +1,100 @@
+{
+  "eventSchedule": {
+    "day1": {
+      "title": "INTERNATIONAL WEBINAR \"Future of Education 2045: Global Trends & Islamic Perspective\"",
+      "date": "7 September 2025",
+      "time": "08.00 - 15.00 WIB",
+      "location": "to be announced"
+    },
+    "day2": {
+      "title": "Seminar \"Sentuh Hati, Bangun Generasi\" & Workshop \"7 Jurus Guru BK Hebat\"",
+      "date": "8 September 2025", 
+      "time": "08.00 - 15.00 WIB",
+      "location": "to be announced"
+    },
+    "day3": {
+      "title": "TABLIGH AKBAR \"Membangun Generasi Qur'ani, Cerdas, dan Berakhlak Mulia\"",
+      "date": "9 September 2025",
+      "time": "08.00 - 15.00 WIB", 
+      "location": "to be announced"
+    }
+  },
+  "speakers": {
+    "day1": {
+      "moderator": {
+        "name": "Asnan Purba, Lc., M.Pd.I., QWP., CWC.",
+        "bio": "Asnan Purba, Lc., M.Pd.I., QWP., CWC. is an education practitioner, consultant, and professional trainer with extensive experience in human resource development, counseling, and Islamic education. Holding academic degrees in Islamic Education (Lc. and M.Pd.I.) and professional certifications as a Quranic Writing Practitioner (QWP) and Certified Waqf Consultant/Coach (CWC), he has actively contributed as a speaker and facilitator in seminars, workshops, and training programs. Renowned for blending academic insights, spiritual wisdom, and practical approaches, he is dedicated to nurturing educators and leaders with integrity, inspiration, and Islamic character to shape a generation that excels nationally and internationally.",
+        "image": "./src/assets/asnan-purba.png"
+      },
+      "speakers": [
+        {
+          "name": "YUDIL CHATIM, SKM, M.ED.",
+          "bio": "YUDIL CHATIM, SKM., M.ED. CURRENTLY SERVES AS THE EDUCATION ANd Cultural Attaché at the Embassy of the Republic of Indonesia in Beijing, China. He holds academic backgrounds in Public Health and Education, and has extensive experience in educational program development, cultural diplomacy, and international cooperation. In his role as Education and Cultural Attaché, he plays an active part in strengthening Indonesia–China bilateral relations in the fields of education and culture. His key responsibilities include facilitating academic exchanges, promoting university collaborations, enhancing the promotion of Indonesian language and culture, and expanding scholarship opportunities for Indonesian students. Mr. Chatim is recognized for his strong commitment to fostering international academic networks and advancing educational diplomacy as a strategic instrument to strengthen Indonesia's positive image on the global stage.",
+          "image": "./src/assets/yudil-chatim.png"
+        },
+        {
+          "name": "INTERNATIONAL BACCALAUREATE",
+          "bio": "The International Baccalaureate (IB) is a global educational organization founded in 1968, focused on developing young people to create a better and more peaceful world. The IB offers four high-quality educational programs for students aged 3 to 19, starting with the Upper Secondary Program and then expanding to include primary, secondary, and vocational education levels. The IB's primary mission is to foster international-mindedness in every student. This is achieved by encouraging critical inquiry, intercultural understanding, and multilingualism. IB education is designed to transcend traditional boundaries, equipping students with the skills and character necessary to understand the complexities of the modern world and take responsible action for the future. IB programs focus not only on academic achievement but also on developing well-rounded, caring individuals who are ready to face global challenges.",
+          "image": "./src/assets/ib-logo.png"
+        },
+        {
+          "name": "PROF. MUHAMMAD ZUHDI M.ED., PH.D.",
+          "bio": "DR. MUHAMMAD ZUHDI, M.Ed., Ph.D. is a distinguished scholar in Islamic education with expertise in curriculum development, educational leadership, and Islamic educational policy. He earned his M.Ed. and Ph.D. from reputable international universities specializing in Islamic Education and Curriculum Studies. As a lecturer, researcher, and international speaker, he actively promotes the integration of Islamic values with modern, inclusive, and globally responsive approaches. Widely published and recognized in national and international forums, Dr. Zuhdi is committed to transforming Islamic education to nurture a new generation of Muslims who are strong in character and faith while being globally competitive.",
+          "image": "./src/assets/muhammad-zuhdi.png"
+        },
+        {
+          "name": "PROF. DATO' DR. FARIZA MD SHAM FASC",
+          "bio": "PROF. DATO' DR. FARIZA MD SHAM FASC IS A PRINCIPAL ASSOCIATE FELLOW WHOSE EXPERTISE LIES IN DA'WAH AND THE DEVELOPMENT OF ADOLESCENTS, AS WELL AS ISLAMIC PSYCHOLOGY. SHE HOLDS A BACHELOR'S AND MASTER'S DEGREE IN ISLAMIC STUDIES (DAKWAH & LEADERSHIP) FROM UKM, EARNED IN 1994 AND 1997 RESPECTIVELY, AND A PHD IN ISLAMIC STUDIES FROM THE UNIVERSITY OF MALAYA IN 2005. CURRENTLY, SHE SERVES AS THE DIRECTOR OF THE INSTITUT ISLAM HADHARI AT UKM AND AS A LECTURER (PROF. DR.) IN THE DAKWAH AND LEADERSHIP STUDIES PROGRAM WITHIN THE FACULTY OF ISLAMIC STUDIES AT UKM.",
+          "image": "./src/assets/fariza-md-sham.png"
+        }
+      ]
+    },
+    "day2": {
+      "moderator": {
+        "name": "Dr. Supangat, M.A.",
+        "bio": "Dr. Supangat, MA adalah trainer nasional, dosen pascasarjana, dan pengelola sekolah Islam dengan pengalaman lebih dari 20 tahun dalam pengembangan pendidikan Islam berbasis mutu, karakter, dan inovasi. Berbekal latar belakang akademik dari UIN Sunan Kalijaga, UGM, McGill University, dan Sydney University, beliau aktif melatih guru, mengembangkan kurikulum, dan memimpin sekolah-sekolah Islam ternama. Karya-karyanya di bidang pendidikan kritis, pembelajaran aktif, dan manajemen sekolah menjadi rujukan di berbagai lembaga pendidikan di Indonesia.",
+        "image": "./src/assets/supangat.png"
+      },
+      "speakers": [
+        {
+          "name": "PUTRA ASGA ELEVRI, S.SI., M.SI.",
+          "bio": "Putra Asga Elevri, S.Si., M.Si. adalah seorang pejabat tinggi di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbudristek) yang saat ini menjabat sebagai Direktur Guru Pendidikan Menengah dan Pendidikan Khusus. Beliau memiliki latar belakang pendidikan yang kuat di bidang sains, dengan gelar sarjana dari Universitas Andalas dan gelar magister dari Institut Teknologi Sepuluh Nopember (ITS). Sebelum mengemban jabatan direktur pada tahun 2022, beliau telah memiliki pengalaman panjang dalam karier birokrasi, termasuk sebagai analis kebijakan dan kepala sub direktorat.",
+          "image": "./src/assets/putra-asga-elevri.png"
+        },
+        {
+          "name": "PROF. MAILA DINIA HUSNI RAHIEM, M.A., PH.D.",
+          "bio": "Prof. Maila Dinia Husni Rahiem, M.A., Ph.D. adalah seorang akademisi dan guru besar terkemuka di Universitas Islam Negeri (UIN) Syarif Hidayatullah Jakarta, khususnya di Program Studi Pendidikan Islam Anak Usia Dini. Beliau menempuh pendidikan tinggi di luar negeri, meraih gelar master dari McGill University, Kanada, dan gelar doktor dari Universiti Putra Malaysia. Keahlian beliau mencakup isu-isu penting seperti kesejahteraan anak dan remaja, pendidikan bencana, dan studi ketahanan, yang didasari oleh pengalaman panjangnya sebagai pekerja kemanusiaan di daerah konflik dan bencana. Pengakuan internasional atas kontribusinya tercermin dari masuknya beliau dalam daftar \"Top 2% Scientists Worldwide\" oleh Stanford University dan Elsevier BV pada tahun 2023 dan 2024.",
+          "image": "./src/assets/maila-dinia-husni-rahiem.png"
+        },
+        {
+          "name": "PROF. TAUFIK KASTURI, M.SI., PH.D.",
+          "bio": "Prof. Taufik Kasturi, S.Psi., M.Si., Ph.D. adalah seorang akademisi yang lahir di Pekalongan pada 29 Maret 1974, dan kini menjabat sebagai Guru Besar Ilmu Psikologi di Universitas Muhammadiyah Surakarta (UMS). Setelah menyelesaikan pendidikan sarjana di UMS, beliau melanjutkan studi magister di Universitas Gadjah Mada dan meraih gelar doktor dari Tilburg University, Belanda, pada tahun 2011. Sepanjang kariernya, ia telah mengemban berbagai posisi strategis di UMS, termasuk sebagai Dekan Fakultas Psikologi dan Wakil Rektor Bidang Kemahasiswaan. Prof. Taufik dikenal dengan keahliannya dalam psikologi sosial dan psikologi Islam, yang ia terapkan untuk mengintegrasikan nilai-nilai keagamaan dengan ilmu psikologi.",
+          "image": "./src/assets/taufik-kasturi.png"
+        }
+      ]
+    },
+    "day3": {
+      "moderator": null,
+      "speakers": [
+        {
+          "name": "DR. K.H. MUHAMMAD ABDUH TUASIKAL, S.T., M.SC.",
+          "bio": "Dr. K.H. Muhammad Abduh Tuasikal, S.T., M.Sc. adalah Pendiri dan Pembina Pesantren Darus Sholihin serta CEO Rumaysho.com. Beliau dikenal sebagai tokoh pendidikan Islam yang aktif dalam dakwah dan pengembangan pendidikan berbasis teknologi. Dengan latar belakang teknik dan magister, beliau memadukan pendekatan modern dengan nilai-nilai Islam tradisional dalam mendidik generasi muda. Melalui platform Rumaysho.com, beliau telah menjangkau jutaan umat Muslim dengan konten edukatif yang berkualitas.",
+          "session": "Gen-Z Bermanfaat: Pendidikan Islam Sebagai Fondasi",
+          "image": "./src/assets/muhammad-abduh-tuasikal.png"
+        },
+        {
+          "name": "DR. ABDULLAH ROY, M.A.",
+          "bio": "Dr. Abdullah Roy, M.A. adalah Pendiri dan Pembina Komunitas HSI (Halaqah Silsilah Ilmiyyah) serta Ketua STIT Riyadhussholihiin Pandeglang. Beliau merupakan akademisi dan praktisi pendidikan Islam yang berpengalaman dalam pengembangan kurikulum dan metodologi pembelajaran Islam. Melalui komunitas HSI, beliau telah membina ribuan santri dan mahasiswa dalam memahami Islam secara komprehensif dan aplikatif.",
+          "session": "Menjadi Teladan Terbaik: Pentingnya Perilaku Orang Tua dalam Pendidikan Anak",
+          "image": "./src/assets/abdullah-roy.png"
+        },
+        {
+          "name": "USTADZ AMMI NUR BAITS, S.T., B.A.",
+          "bio": "Ustadz Ammi Nur Baits, S.T., B.A. adalah Pendiri dan Pembina Wisma Tahfidz Muslimah (WITAMA) serta Founder ANB Academy. Dengan latar belakang teknik dan bachelor of arts, beliau memiliki keahlian khusus dalam metode pembelajaran Al-Qur'an dan pendidikan karakter Islami. Melalui WITAMA dan ANB Academy, beliau telah melatih ribuan muslimah dalam menghafal Al-Qur'an dan memahami ajaran Islam secara mendalam.",
+          "session": "Belajar Cara Nabi Belajar: Tadabbur, Tafakkur, Tazakkur",
+          "image": "./src/assets/ammi-nur-baits.png"
+        }
+      ]
+    }
+  }
+}

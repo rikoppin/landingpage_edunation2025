@@ -1,27 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Hero = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const targetDate = new Date('2025-11-07T08:00:00+07:00'); // WIB timezone
+
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section id="home" className="pt-20 pb-16 gradient-bg min-h-screen flex items-center">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-8 animate-fade-in">
-            <span className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
-            Seminar & Workshop Nasional
-          </div>
-
           {/* Main Title */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-900 mb-6 animate-slide-up">
-            <span className="text-gradient">Sentuh Hati,</span>
+            <span className="text-gradient">Edunation Fest</span>
             <br />
-            <span className="text-gradient">Bangun Generasi</span>
+            <span className="text-gradient">2025</span>
           </h1>
 
           {/* Subtitle */}
           <div className="mb-8 animate-slide-up animation-delay-200">
             <p className="text-xl sm:text-2xl font-semibold text-primary-600 mb-2">
-              Road to EduNation 2025
+              7-9 November 2025 at JICC
             </p>
             <p className="text-lg sm:text-xl text-accent-700 max-w-3xl mx-auto">
               Transformasi Guru Menuju Sekolah Sehat Mental
@@ -30,49 +55,34 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-lg text-accent-600 max-w-4xl mx-auto mb-12 leading-relaxed animate-slide-up animation-delay-400">
-             Seminar Nasional dan Workshop Fasilitasi Praktis Menghadirkan Tokoh-Tokoh Pendidikan Terkemuka untuk membangun ruang kelas yang aman dan empatik bagi kesehatan mental siswa dan&nbsp;guru.
+             Menghadirkan Tokoh-Tokoh Pendidikan Terkemuka untuk membangun ruang kelas yang aman dan empatik bagi kesehatan mental siswa dan&nbsp;guru.
           </p>
 
-          {/* Key Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-slide-up animation-delay-600">
-            <div className="card p-6 text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+          {/* Countdown Timer */}
+          <div className="inline-flex items-center justify-center mb-8">
+            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-3xl px-10 py-6 shadow-xl">
+              <div className="flex items-center justify-center space-x-6">
+                <div className="text-center">
+                  <div className="text-4xl sm:text-5xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</div>
+                  <div className="text-sm opacity-90 mt-1">Hari</div>
+                </div>
+                <div className="text-3xl opacity-70">:</div>
+                <div className="text-center">
+                  <div className="text-4xl sm:text-5xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</div>
+                  <div className="text-sm opacity-90 mt-1">Jam</div>
+                </div>
+                <div className="text-3xl opacity-70">:</div>
+                <div className="text-center">
+                  <div className="text-4xl sm:text-5xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+                  <div className="text-sm opacity-90 mt-1">Menit</div>
+                </div>
+                <div className="text-3xl opacity-70">:</div>
+                <div className="text-center">
+                  <div className="text-4xl sm:text-5xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+                  <div className="text-sm opacity-90 mt-1">Detik</div>
+                </div>
               </div>
-              <h3 className="font-semibold text-accent-800 mb-2">Tanggal</h3>
-              <p className="text-primary-600 font-medium">11 Agustus 2025</p>
-              <p className="text-sm text-accent-600">(Tentatif)</p>
             </div>
-
-            <div className="card p-6 text-center">
-              <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-accent-800 mb-2">Waktu</h3>
-              <p className="text-secondary-600 font-medium">08.00 - 15.00 WIB</p>
-              <p className="text-sm text-accent-600">7 Jam Penuh</p>
-            </div>
-
-            <div className="card p-6 text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-accent-800 mb-2">Lokasi</h3>
-              <p className="text-primary-600 font-medium">Andalucia Hall</p>
-              <p className="text-sm text-accent-600">Menara 165</p>
-            </div>
-          </div>
-
-          {/* Free Badge */}
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white rounded-full text-lg font-bold mb-8 shadow-lg animate-bounce-slow">
-            GRATIS - Tanpa Dipungut Biaya
           </div>
 
           {/* CTA Buttons */}

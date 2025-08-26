@@ -1,69 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import eventData from '../data.json';
 
 const Countdown = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const { eventSchedule } = eventData;
 
-  const [isExpired, setIsExpired] = useState(false);
-
-  useEffect(() => {
-    const targetDate = new Date('2025-08-11T08:00:00+07:00'); // WIB timezone
-
-    const updateCountdown = () => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        setTimeLeft({ days, hours, minutes, seconds });
-        setIsExpired(false);
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        setIsExpired(true);
-      }
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const CountdownCard = ({ value, label, color }) => (
-    <div className={`card p-6 text-center ${color} transform hover:scale-105 transition-all duration-300`}>
-      <div className="text-4xl sm:text-5xl font-bold text-white mb-2 font-display">
-        {value.toString().padStart(2, '0')}
+  const EventCard = ({ day, title, location, dayNumber }) => (
+    <div className="card bg-white p-6 text-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+      <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span className="text-white font-bold text-xl">{dayNumber}</span>
       </div>
-      <div className="text-white/90 text-sm sm:text-base font-medium uppercase tracking-wide">
-        {label}
+      <h3 className="font-bold text-accent-800 mb-3 text-lg">Day {dayNumber}</h3>
+      <p className="text-primary-600 font-medium mb-3 text-sm leading-relaxed">
+        {title}
+      </p>
+      <div className="flex items-center justify-center text-accent-600 text-sm">
+        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        {location}
       </div>
     </div>
   );
-
-  if (isExpired) {
-    return (
-      <section className="py-16 bg-gradient-to-r from-accent-800 to-accent-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Pendaftaran Telah Ditutup
-            </h2>
-            <p className="text-white/90 text-lg">
-              Acara telah dimulai. Terima kasih atas antusiasme Anda!
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="py-16 bg-gradient-to-r from-primary-600 via-primary-700 to-secondary-600 relative overflow-hidden">
@@ -77,46 +35,44 @@ const Countdown = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-display">
-            ⏰ Hitung Mundur Pendaftaran
+            📅 Tema Acara
           </h2>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
-            Jangan sampai terlewat! Pendaftaran akan ditutup saat acara dimulai
+            Bergabunglah dengan kami dalam rangkaian acara edukatif selama 3 hari penuh
           </p>
           <div className="mt-4 inline-flex items-center px-4 py-2 bg-white/20 rounded-full text-white text-sm">
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            Berakhir: 11 Agustus 2025, 08:00 WIB
+            7-9 September 2025 at JICC
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto mb-12">
-          <CountdownCard 
-            value={timeLeft.days} 
-            label="Hari" 
-            color="bg-gradient-to-br from-primary-500 to-primary-600"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+          <EventCard 
+            day="day1"
+            title={eventSchedule.day1.title}
+            location={eventSchedule.day1.location}
+            dayNumber="1"
           />
-          <CountdownCard 
-            value={timeLeft.hours} 
-            label="Jam" 
-            color="bg-gradient-to-br from-secondary-500 to-secondary-600"
+          <EventCard 
+            day="day2"
+            title={eventSchedule.day2.title}
+            location={eventSchedule.day2.location}
+            dayNumber="2"
           />
-          <CountdownCard 
-            value={timeLeft.minutes} 
-            label="Menit" 
-            color="bg-gradient-to-br from-primary-500 to-primary-600"
-          />
-          <CountdownCard 
-            value={timeLeft.seconds} 
-            label="Detik" 
-            color="bg-gradient-to-br from-secondary-500 to-secondary-600"
+          <EventCard 
+            day="day3"
+            title={eventSchedule.day3.title}
+            location={eventSchedule.day3.location}
+            dayNumber="3"
           />
         </div>
 
         <div className="text-center">
           <div className="mb-6">
             <p className="text-white/90 text-lg mb-4">
-              Segera daftarkan diri Anda sebelum terlambat!
+              Jangan lewatkan kesempatan emas ini untuk mengembangkan diri!
             </p>
           </div>
           
@@ -131,13 +87,13 @@ const Countdown = () => {
               <svg className="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
               </svg>
-              Bagikan Acara
+              Info Lengkap
             </button>
           </div>
 
           <div className="mt-8 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
             <p className="text-white/90 text-sm">
-              💡 <strong>Tips:</strong> Bookmark halaman ini dan pantau terus countdown-nya!
+              💡 <strong>Info:</strong> Lokasi akan diumumkan segera. Pantau terus update terbaru!
             </p>
           </div>
         </div>

@@ -35,11 +35,6 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const navigateToPage = (path) => {
-    navigate(path);
-    setIsMenuOpen(false);
-  };
-
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
@@ -64,22 +59,16 @@ const Header = () => {
               Beranda
             </button>
             <button 
-              onClick={() => navigateToPage('/company-profile')}
-              className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Company Profile
-            </button>
-            <button 
               onClick={() => scrollToSection('speakers')}
               className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
             >
               Pembicara
             </button>
             <button 
-              onClick={() => scrollToSection('workshop')}
+              onClick={() => scrollToSection('benefit')}
               className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
             >
-              Workshop
+              Benefit
             </button>
             <button 
               onClick={() => scrollToSection('details')}
@@ -92,6 +81,12 @@ const Header = () => {
               className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
             >
               Kontak
+            </button>
+            <button 
+              onClick={() => scrollToSection('key-features')}
+              className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
+            >
+              Key Features
             </button>
             <button className="btn-primary">
               Daftar Sekarang
@@ -129,22 +124,16 @@ const Header = () => {
               Beranda
             </button>
             <button 
-              onClick={() => navigateToPage('/company-profile')}
-              className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
-            >
-              Company Profile
-            </button>
-            <button 
               onClick={() => scrollToSection('speakers')}
               className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
             >
               Pembicara
             </button>
             <button 
-              onClick={() => scrollToSection('workshop')}
+              onClick={() => scrollToSection('benefit')}
               className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
             >
-              Workshop
+              Benefit
             </button>
             <button 
               onClick={() => scrollToSection('details')}
@@ -157,6 +146,12 @@ const Header = () => {
               className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
             >
               Kontak
+            </button>
+            <button 
+              onClick={() => scrollToSection('key-features')}
+              className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
+            >
+              Key Features
             </button>
             <button className="btn-primary w-full mt-4">
               Daftar Sekarang

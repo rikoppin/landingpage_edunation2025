@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import eventData from '../data.json';
 
 const EventDetails = () => {
   const { eventSchedule } = eventData;
+  const [selectedDay, setSelectedDay] = useState('day1');
   
   const eventInfo = [
     {
@@ -68,48 +69,34 @@ const EventDetails = () => {
     }
   ];
 
-  const schedule = [
-    {
-      time: "08.00 - 08.30",
-      activity: "Registrasi & Welcome Coffee",
-      type: "registration"
-    },
-    {
-      time: "08.30 - 09.00",
-      activity: "Pembukaan & Sambutan",
-      type: "opening"
-    },
-    {
-      time: "09.00 - 10.30",
-      activity: "Sesi 1: Prof. Maila Dinia Husni Rahiem",
-      type: "session"
-    },
-    {
-      time: "10.30 - 10.45",
-      activity: "Coffee Break",
-      type: "break"
-    },
-    {
-      time: "10.45 - 12.15",
-      activity: "Sesi 2: Prof. Taufik Kasturi",
-      type: "session"
-    },
-    {
-      time: "12.15 - 13.15",
-      activity: "Ishoma (Istirahat, Sholat, Makan)",
-      type: "break"
-    },
-    {
-      time: "13.15 - 14.45",
-      activity: "Workshop: 7 Jurus Guru BK Hebat",
-      type: "workshop"
-    },
-    {
-      time: "14.45 - 15.00",
-      activity: "Penutupan & Foto Bersama",
-      type: "closing"
-    }
-  ];
+  const scheduleData = {
+    day1: [
+      {
+        time: "to be announced",
+        activity: "International Webinar: Future of Education 2045",
+        type: "session"
+      }
+    ],
+    day2: [
+      {
+        time: "to be announced", 
+        activity: "Seminar: Sentuh Hati, Bangun Generasi",
+        type: "session"
+      },
+      {
+        time: "to be announced",
+        activity: "Workshop: 7 Jurus Guru BK Hebat",
+        type: "workshop"
+      }
+    ],
+    day3: [
+      {
+        time: "to be announced",
+        activity: "Tabligh Akbar: Membangun Generasi Qur'ani",
+        type: "session"
+      }
+    ]
+  };
 
   const getScheduleIcon = (type) => {
     switch (type) {
@@ -135,17 +122,24 @@ const EventDetails = () => {
     }
   };
 
+  const DayButton = ({ day, dayNumber, isActive, onClick }) => (
+    <button
+      onClick={onClick}
+      className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+        isActive
+          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
+          : 'bg-white text-accent-700 hover:bg-primary-50 border border-primary-200'
+      }`}
+    >
+      Day {dayNumber}
+    </button>
+  );
+
   return (
     <section id="details" className="py-20 gradient-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Detail Acara
-          </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-accent-900 mb-6 font-display">
             <span className="text-gradient">Informasi Lengkap</span>
             <br />
@@ -174,17 +168,52 @@ const EventDetails = () => {
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-accent-800 mb-4 font-display">
-              📋 Jadwal Acara
+              Rundown Acara
             </h3>
             <p className="text-accent-600 text-lg">
-              Rundown lengkap kegiatan dari pagi hingga sore
+              Jadwal kegiatan untuk setiap hari acara
             </p>
+          </div>
+
+          {/* Day Selection */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <DayButton
+              day="day1"
+              dayNumber="1"
+              isActive={selectedDay === 'day1'}
+              onClick={() => setSelectedDay('day1')}
+            />
+            <DayButton
+              day="day2"
+              dayNumber="2"
+              isActive={selectedDay === 'day2'}
+              onClick={() => setSelectedDay('day2')}
+            />
+            <DayButton
+              day="day3"
+              dayNumber="3"
+              isActive={selectedDay === 'day3'}
+              onClick={() => setSelectedDay('day3')}
+            />
+          </div>
+
+          {/* Event Title for Selected Day */}
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Day {selectedDay.slice(-1)} - {eventSchedule[selectedDay].date}
+            </div>
+            <h4 className="text-xl font-bold text-accent-800 mb-2">
+              {eventSchedule[selectedDay].title}
+            </h4>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="card p-8">
               <div className="space-y-4">
-                {schedule.map((item, index) => (
+                {scheduleData[selectedDay].map((item, index) => (
                   <div key={index} className={`flex items-center p-4 rounded-lg border-l-4 ${getScheduleColor(item.type)} transition-all duration-300 hover:shadow-md`}>
                     <div className="text-2xl mr-4">
                       {getScheduleIcon(item.type)}
@@ -202,6 +231,18 @@ const EventDetails = () => {
                   </div>
                 ))}
               </div>
+              
+              {/* Info Note */}
+              <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-primary-700 text-sm font-medium">
+                    Jadwal detail akan diumumkan segera. Pantau terus update terbaru!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +251,7 @@ const EventDetails = () => {
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-accent-800 mb-4 font-display">
-              🏫 Penyelenggara
+              Penyelenggara
             </h3>
             <p className="text-accent-600 text-lg">
               Institusi terpercaya yang menghadirkan acara berkualitas
@@ -235,7 +276,7 @@ const EventDetails = () => {
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-accent-800 mb-4 font-display">
-              🤝 Mitra Pendukung
+              Mitra Pendukung
             </h3>
             <p className="text-accent-600 text-lg">
               Dukungan dari institusi terkemuka dalam bidang pendidikan
@@ -322,7 +363,7 @@ const EventDetails = () => {
                 <svg className="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-accent-700">Semangat belajar dan berbagi! 🚀</span>
+                <span className="text-accent-700">Semangat belajar dan berbagi!</span>
               </li>
             </ul>
           </div>
@@ -332,7 +373,7 @@ const EventDetails = () => {
         <div className="text-center">
           <div className="card p-8 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4 font-display">
-              🎯 Siap Bergabung?
+              Siap Bergabung?
             </h3>
             <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
               Jangan lewatkan kesempatan emas ini untuk bertransformasi menjadi guru yang lebih baik!

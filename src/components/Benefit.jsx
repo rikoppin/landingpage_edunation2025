@@ -187,7 +187,7 @@ const Benefit = () => {
         <div className="text-center mt-16">
           <div className="card p-8 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4 font-display">
-              🎯 Jangan Lewatkan Kesempatan Ini!
+              Jangan Lewatkan Kesempatan Ini!
             </h3>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Daftar sekarang dan dapatkan semua benefit eksklusif dari EduNation Fest 2025

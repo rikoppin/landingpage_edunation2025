@@ -246,7 +246,7 @@ const Speakers = () => {
         <div id="key-features" className="card p-8 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4 font-display">
-              🎯 Key Features
+              Key Features
             </h3>
             <p className="text-white/90 text-lg">
               Fitur unggulan yang akan Anda dapatkan di setiap hari acara

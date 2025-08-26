@@ -65,6 +65,12 @@ const Header = () => {
               Pembicara
             </button>
             <button 
+              onClick={() => scrollToSection('key-features')}
+              className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
+            >
+              Key Features
+            </button>
+            <button 
               onClick={() => scrollToSection('benefit')}
               className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
             >
@@ -81,12 +87,6 @@ const Header = () => {
               className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
             >
               Kontak
-            </button>
-            <button 
-              onClick={() => scrollToSection('key-features')}
-              className="text-accent-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Key Features
             </button>
             <button className="btn-primary">
               Daftar Sekarang
@@ -130,6 +130,12 @@ const Header = () => {
               Pembicara
             </button>
             <button 
+              onClick={() => scrollToSection('key-features')}
+              className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
+            >
+              Key Features
+            </button>
+            <button 
               onClick={() => scrollToSection('benefit')}
               className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
             >
@@ -146,12 +152,6 @@ const Header = () => {
               className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
             >
               Kontak
-            </button>
-            <button 
-              onClick={() => scrollToSection('key-features')}
-              className="block w-full text-left text-accent-700 hover:text-primary-600 font-medium py-2 transition-colors"
-            >
-              Key Features
             </button>
             <button className="btn-primary w-full mt-4">
               Daftar Sekarang
